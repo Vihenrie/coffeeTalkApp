@@ -1,38 +1,51 @@
 import React from "react";
+import { useState } from "react";
 import {
   Dimensions,
   Image,
   StyleSheet,
   Text,
   View,
-  Pressable,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 import back from "../../../assets/images/beansBackground1.png";
 import plus from "../../../assets/plus.png";
 import coffee1 from "../../../assets/images/coffee1.png";
+import glass from "../../../assets/magnifying-glass.png"
 
 const width = Dimensions.get("screen").width;
 
 export default function Carrinho() {
+  const [text, onChangeText] = useState('');
   return (
     <>
-      <View>
+      <View style={estilos.imgStyle}>
         <Image source={back} style={estilos.topo}></Image>
         <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
+
+        <View style={estilos.buscadorContainer}>
+          <View style={estilos.buscador}>
+            <Image source={glass}></Image>
+            <TextInput
+            style={estilos.input}
+            onChangeText={onChangeText}
+            placeholder="Buscar Café..."
+            />
+          </View>
       </View>
 
       <View style={estilos.container}>
         <View style={estilos.buttonContainer}>
-          <TouchableOpacity style={estilos.ButtonContainer}>
+          <TouchableOpacity style={estilos.Button}>
             <Text style={estilos.ButtonText}>Todos</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={estilos.ButtonContainer}>
+          <TouchableOpacity style={estilos.Button}>
             <Text style={estilos.ButtonText}>Latte</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={estilos.ButtonContainer}>
+          <TouchableOpacity style={estilos.Button}>
             <Text style={estilos.ButtonText}>Tradicional</Text>
           </TouchableOpacity>
         </View>
@@ -41,7 +54,7 @@ export default function Carrinho() {
           <Text style={estilos.nome}>Lista de produtos</Text>
 
           <View style={estilos.card}>
-            <View style={estilos.imgStyle}>
+            <View>
               <Image source={coffee1} style={estilos.coffee}></Image>
             </View>
             <Text style={estilos.nomeItem}>Mocha</Text>
@@ -56,18 +69,41 @@ export default function Carrinho() {
           </View>
         </View>
       </View>
+</View>
     </>
   );
 }
 
 const estilos = StyleSheet.create({
+  input: {
+    width: 280,
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  buscadorContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginTop: 200
+  },
+  buscador: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 12,
+    flexDirection: 'row',
+    backgroundColor: '#d4a574',
+    borderRadius: 30,
+    width: 350,
+  },
   imgStyle: {
+    backgroundColor: "#e4d0bd"
   },
   coffee: {
     height: 140,
     width: 140,
     marginTop: -125,
-
   },
   card: {
     alignItems: "center",
@@ -92,9 +128,10 @@ const estilos = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
-    paddingTop: 250,
+    paddingTop: 20,
+    
   },
-  ButtonContainer: {
+  Button: {
     backgroundColor: "#d4a574",
     borderRadius: 30,
     paddingVertical: 10,
@@ -134,7 +171,8 @@ const estilos = StyleSheet.create({
     lineHeight: 42,
     color: "#3C2A21",
     fontFamily: "PoppinsM",
-    paddingBottom: 30,
+    paddingBottom: 50,
+    paddingTop: 10,
   },
   nomeItem: {
     fontSize: 24,
