@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar } from "react-native";
+import Carrinho from "./src/pages/Carrinho/index";
+import {
+  useFonts,
+  Poppins_200ExtraLight_Italic,
+  Poppins_300Light,
+  Poppins_500Medium,
+} from "@expo-google-fonts/poppins";
 
 export default function App() {
+  const [fontes] = useFonts({
+    PoppinsExli: Poppins_200ExtraLight_Italic,
+    PoppinsL: Poppins_300Light,
+    PoppinsM: Poppins_500Medium,
+  });
+
+  if (!fontes) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <StatusBar />
+      <Carrinho />
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
