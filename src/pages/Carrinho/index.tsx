@@ -8,18 +8,19 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  ScrollView,
 } from "react-native";
 import back from "../../../assets/images/beansBackground1.png";
 import plus from "../../../assets/plus.png";
 import coffee1 from "../../../assets/images/coffee1.png";
-import glass from "../../../assets/magnifying-glass.png"
+import glass from "../../../assets/magnifying-glass.png";
 
 const width = Dimensions.get("screen").width;
 
 export default function Carrinho() {
-  const [text, onChangeText] = useState('');
+  const [text, onChangeText] = useState("");
   return (
-    <>
+    <ScrollView>
       <View style={estilos.imgStyle}>
         <Image source={back} style={estilos.topo}></Image>
         <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
@@ -28,77 +29,79 @@ export default function Carrinho() {
           <View style={estilos.buscador}>
             <Image source={glass}></Image>
             <TextInput
-            style={estilos.input}
-            onChangeText={onChangeText}
-            placeholder="Buscar Café..."
+              style={estilos.input}
+              onChangeText={onChangeText}
+              placeholder="Buscar Café..."
             />
           </View>
-      </View>
-
-      <View style={estilos.container}>
-        <View style={estilos.buttonContainer}>
-          <TouchableOpacity style={estilos.Button}>
-            <Text style={estilos.ButtonText}>Todos</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={estilos.Button}>
-            <Text style={estilos.ButtonText}>Latte</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={estilos.Button}>
-            <Text style={estilos.ButtonText}>Tradicional</Text>
-          </TouchableOpacity>
         </View>
 
-        <View style={estilos.carrinho}>
-          <Text style={estilos.nome}>Lista de produtos</Text>
-
-          <View style={estilos.card}>
-            <View>
-              <Image source={coffee1} style={estilos.coffee}></Image>
-            </View>
-            <Text style={estilos.nomeItem}>Mocha</Text>
-            <Text style={estilos.descricao}>O café mocha é uma bebida quente com sabor de chocolate que é uma 
-            variante de um café latte. É feito com café espresso, leite vaporizado e chocolate, geralmente na 
-            forma de calda ou pó</Text>
-
-            <Text style={estilos.preco}>R$40,00</Text>
-            <TouchableOpacity style={estilos.buttonCard}>
-              <Image source={plus}></Image>
+        <View style={estilos.container}>
+          <View style={estilos.buttonContainer}>
+            <TouchableOpacity style={estilos.Button}>
+              <Text style={estilos.ButtonText}>Todos</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={estilos.Button}>
+              <Text style={estilos.ButtonText}>Latte</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={estilos.Button}>
+              <Text style={estilos.ButtonText}>Tradicional</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={estilos.carrinho}>
+            <Text style={estilos.nome}>Lista de produtos</Text>
+
+            <View style={estilos.card}>
+              <View>
+                <Image source={coffee1} style={estilos.coffee}></Image>
+              </View>
+              <Text style={estilos.nomeItem}>Mocha</Text>
+              <Text style={estilos.descricao}>
+                O café mocha é uma bebida quente com sabor de chocolate que é
+                uma variante de um café latte. É feito com café espresso, leite
+                vaporizado e chocolate, geralmente na forma de calda ou pó
+              </Text>
+
+              <Text style={estilos.preco}>R$40,00</Text>
+              <TouchableOpacity style={estilos.buttonCard}>
+                <Image source={plus}></Image>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
-</View>
-    </>
+    </ScrollView>
   );
 }
 
 const estilos = StyleSheet.create({
   input: {
     width: 280,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 16,
   },
   buscadorContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    marginTop: 200
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    marginTop: 200,
   },
   buscador: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: 12,
-    flexDirection: 'row',
-    backgroundColor: '#d4a574',
+    flexDirection: "row",
+    backgroundColor: "#d4a574",
     borderRadius: 30,
     width: 350,
   },
   imgStyle: {
-    backgroundColor: "#e4d0bd"
+    backgroundColor: "#e4d0bd",
   },
   coffee: {
     height: 140,
@@ -129,7 +132,6 @@ const estilos = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     paddingTop: 20,
-    
   },
   Button: {
     backgroundColor: "#d4a574",
