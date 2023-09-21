@@ -6,8 +6,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
-  TextInput,
   ScrollView,
 } from "react-native";
 import back from "../../../assets/images/beansBackground1.png";

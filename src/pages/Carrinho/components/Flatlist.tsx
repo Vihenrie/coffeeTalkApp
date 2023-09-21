@@ -1,22 +1,32 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
+import { DATA } from "../data/CategoriasData";
+
+type ItemProps = { title: string };
+
+const Item = ({ title }: ItemProps) => (
+  <View style={estilos.buttonContainer}>
+    <TouchableOpacity style={estilos.Button}>
+      <Text style={estilos.ButtonText}>{title}</Text>
+    </TouchableOpacity>
+  </View>
+);
 
 export default function Flatlist() {
   return (
     <>
-      <View style={estilos.buttonContainer}>
-        <TouchableOpacity style={estilos.Button}>
-          <Text style={estilos.ButtonText}>Todos</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={estilos.Button}>
-          <Text style={estilos.ButtonText}>Latte</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={estilos.Button}>
-          <Text style={estilos.ButtonText}>Tradicional</Text>
-        </TouchableOpacity>
-      </View>
+      <FlatList
+        data={DATA}
+        renderItem={({ item }) => <Item title={item.title} />}
+        keyExtractor={(item) => item.id}
+        horizontal
+      />
     </>
   );
 }
@@ -28,6 +38,7 @@ const estilos = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     paddingTop: 20,
+    paddingLeft: 10,
   },
   Button: {
     backgroundColor: "#d4a574",

@@ -27,46 +27,46 @@ export default function Card() {
 }
 
 const estilos = StyleSheet.create({
-    coffee: {
-        height: 140,
-        width: 140,
-        marginTop: -125,
-      },
-      card: {
-        alignItems: "center",
-        marginTop: 50,
-        marginBottom: 20,
-        backgroundColor: "#704214",
-        borderRadius: 25,
-        padding: 55,
-      },
-      buttonCard: {
-        display: "flex",
-        alignItems: "flex-end",
-        justifyContent: "flex-end",
-        flexDirection: "row",
-        borderRadius: 500,
-        backgroundColor: "#d4a574",
-        paddingVertical: 12,
-        paddingHorizontal: 12,
-      },
-      nomeItem: {
-        fontSize: 24,
-        fontFamily: "PoppinsM",
-        lineHeight: 26,
-        marginLeft: 12,
-        marginTop: 20,
-        color: "#d4a574",
-      },
-      descricao: {
-        color: "#d4a574",
-        fontFamily: "PoppinsExli",
-        marginTop: 10,
-      },
-      preco: {
-        fontSize: 26,
-        fontFamily: "PoppinsL",
-        color: "#eccbaa",
-        marginTop: 15,
-      },
-})
+  coffee: {
+    height: 140,
+    width: 140,
+    marginTop: -125,
+  },
+  card: {
+    alignItems: "center",
+    marginTop: 50,
+    marginBottom: 20,
+    backgroundColor: "#704214",
+    borderRadius: 25,
+    padding: 55,
+  },
+  buttonCard: {
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
+    flexDirection: "row",
+    borderRadius: 500,
+    backgroundColor: "#d4a574",
+    paddingVertical: 12,
+    paddingHorizontal: 12,
+  },
+  nomeItem: {
+    fontSize: 24,
+    fontFamily: "PoppinsM",
+    lineHeight: 26,
+    marginLeft: 12,
+    marginTop: 20,
+    color: "#d4a574",
+  },
+  descricao: {
+    color: "#d4a574",
+    fontFamily: "PoppinsExli",
+    marginTop: 10,
+  },
+  preco: {
+    fontSize: 26,
+    fontFamily: "PoppinsL",
+    color: "#eccbaa",
+    marginTop: 15,
+  },
+});
